@@ -15,7 +15,7 @@ public class Room {
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Long id;
 	    private String category;
-	    private String isAvailable;
+	    private String is_available;
 	    private double price;
 	    
 	    @OneToMany(mappedBy = "room")
@@ -42,12 +42,12 @@ public class Room {
 			this.category = category;
 		}
 
-		public String isAvailable() {
-			return isAvailable;
+		public String getis_available() {
+			return is_available;
 		}
 
-		public void setAvailable(String isAvailable) {
-			this.isAvailable = isAvailable;
+		public void setis_available(String is_available) {
+			this.is_available = is_available;
 		}
 
 		public double getPrice() {
@@ -58,11 +58,11 @@ public class Room {
 			this.price = price;
 		}
 
-		public Room(Long id, String category, String isAvailable, double price) {
+		public Room(Long id, String category, String is_available, double price) {
 			super();
 			this.id = id;
 			this.category = category;
-			this.isAvailable = isAvailable;
+			this.is_available = is_available;
 			this.price = price;
 		}
 

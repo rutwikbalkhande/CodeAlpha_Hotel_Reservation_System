@@ -16,25 +16,34 @@ import com.project.service.ReservationService;
 @RestController
 @RequestMapping("/reservation")
 public class ReservationController {
+	//{check com.project -> Notes_Important for details method}
+	//URL ==  localhost:8080/reservation/
 	
 	@Autowired
 	private ReservationService reservationService;
 	
+	              //display reservation table data 
 	 @GetMapping("/")
 	    public List<Reservation> getAllReservations() {
 	        return reservationService.getAllReservations();
 	    }
+	 
+	             // find customer booking details using ReservatinID from Table resrvation	
 	 @GetMapping("/{id}")
 	    public Reservation getReservById(@PathVariable int id) {
 	        return reservationService.getReservById(id);
 	    }
 
+	           // booking room	 
 	    @PostMapping("/")
 	    public Reservation createReservation(@RequestBody Reservation reservation) {
 	        return reservationService.saveReservation(reservation);
 	    }
 	    
-	    @GetMapping("/room/{roomId}")
+	    
+	         // find booking history of room  { localhost:8080/reservation/room/1  } 
+	    
+	     @GetMapping("/room/{roomId}")
 	    public List<Reservation> getBookingDetailsByRoomId(@PathVariable Long roomId) {
 	        return reservationService.getBookingDetailsByRoomId(roomId);
 	    }
