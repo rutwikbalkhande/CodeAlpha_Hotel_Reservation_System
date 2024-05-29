@@ -22,5 +22,5 @@ The system allows users to search for available rooms, make reservations, and vi
 ## Prerequisites
 
 - Java 17 or higher
-- Maven
+- Maven /springboot
 - MySQL
